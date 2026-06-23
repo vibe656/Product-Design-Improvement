@@ -235,6 +235,89 @@
     font-weight: 400;
   }
 
+  /* ---- FOOTNOTE ---- */
+  .footnote {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border);
+    line-height: 1.6;
+  }
+
+  /* ---- COST TABLE ---- */
+  .cost-table-wrap {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .cost-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    background: var(--navy);
+    text-align: left;
+    padding: 14px 18px;
+    font-weight: 400;
+  }
+  .cost-table th:last-child, .cost-table td:last-child { text-align: right; }
+  .cost-table td {
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table .method {
+    font-weight: 500;
+  }
+  .cost-table .rate {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+  }
+  .cost-table .highlight td { background: rgba(254,238,0,0.07); }
+  .cost-table .highlight .rate { color: #8a7700; }
+
+  /* ---- UNIT ECONOMICS FLOW ---- */
+  .econ-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 28px 0;
+  }
+  .econ-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .econ-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--navy);
+    background: var(--electric);
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-weight: 700;
+  }
+  .econ-step p { margin: 0; font-size: 14px; }
+  .econ-step strong { color: var(--navy); font-weight: 500; }
+
   /* ---- PAYMENT FLOW ---- */
   .flow-wrap {
     background: var(--paper);
@@ -560,10 +643,11 @@
           <div class="desc">Indian tourists: Dubai's largest international visitor segment</div>
         </div>
         <div class="stat-card">
-          <div class="num">0%</div>
-          <div class="desc">MDR on UPI transactions — merchant-friendly economics</div>
+          <div class="num">~0%</div>
+          <div class="desc">MDR on standard UPI bank-transfer transactions — vs. ~2–3% on cards</div>
         </div>
       </div>
+      <div class="footnote">Visitor and uplift figures are directional estimates for illustrative purposes; see Section 02 for sourcing notes.</div>
     </section>
 
     <!-- RESEARCH -->
@@ -571,29 +655,30 @@
       <div class="section-label">02 — Research & Insights</div>
       <h2>Understanding who's at the checkout</h2>
       <p>Dubai's tourism data tells a clear story. India is the city's #1 visitor source market — followed by Saudi Arabia, the United Kingdom, and Russia. These four markets together account for a significant share of international footfall and represent a meaningful slice of cross-border e-commerce demand.</p>
-      <p>UPI, India's real-time payment network, has already expanded internationally and is live in the UAE. The infrastructure exists; the user behaviour exists. The opportunity is to connect them at checkout — making it easier for a large Indian visitor base to transact, and unlocking a cross-border use case where Indians in India can order gifts for family in the UAE using their familiar payment rail.</p>
+      <p>UPI, India's real-time payment network, is already live in the UAE — not as a future possibility, but as working infrastructure. Since launching in the UAE in 2021, UPI has expanded through the NPCI International–AANI interlink (AANI being the UAE's own domestic instant-payments rail), with acquirers like Network International, Mashreq NeoPay, and Magnati already enabling QR-based UPI acceptance at over 60,000 merchants, including Dubai Duty Free and Lulu Hypermarket. The infrastructure exists; the user behaviour exists. The opportunity is to connect them at Noon's checkout — making it easier for a large Indian visitor base to transact, and unlocking a cross-border use case where Indians in India can order gifts for family in the UAE using their familiar payment rail.</p>
       <div class="insight-grid">
         <div class="insight-card">
           <div class="icon">🇮🇳</div>
-          <h4>India — ~2.4M visitors / year</h4>
+          <h4>India — ~2.4M visitors / year*</h4>
           <p>Dubai's #1 source market. UPI is the dominant payment rail for this demographic.</p>
         </div>
         <div class="insight-card">
           <div class="icon">🇸🇦</div>
-          <h4>Saudi Arabia — ~1.7M visitors / year</h4>
+          <h4>Saudi Arabia — ~1.7M visitors / year*</h4>
           <p>#2 source market and a high-value regional segment with cross-border shopping behaviour.</p>
         </div>
         <div class="insight-card">
           <div class="icon">🇬🇧</div>
-          <h4>UK — ~1.2M visitors / year</h4>
+          <h4>UK — ~1.2M visitors / year*</h4>
           <p>Top European source market, comfortable with card and Apple Pay flows.</p>
         </div>
         <div class="insight-card">
           <div class="icon">🇷🇺</div>
-          <h4>Russia — ~950K visitors / year</h4>
+          <h4>Russia — ~950K visitors / year*</h4>
           <p>Major Eurasian segment, often shopping for premium goods during stays.</p>
         </div>
       </div>
+      <div class="footnote">*Visitor figures are directional estimates based on publicly reported Dubai tourism trends, used for illustrative sizing — not sourced from a single official dataset. UPI/AANI infrastructure details reflect NPCI International's public rollout announcements as of 2026.</div>
     </section>
 
     <!-- SOLUTION -->
@@ -634,7 +719,7 @@
 
       <p>This covers four real scenarios with a single rule: Indian phone numbers (whether logging in from the UAE or India) and UAE phone numbers (whether in the UAE or in India) both see UPI as an option. The first group includes Indian tourists in the UAE and Indian residents ordering gifts for family in the UAE. The second includes UAE residents who travel to India often, who have NRI family ties, or who simply prefer UPI for cross-border purchases. Users from other origins continue with the current checkout, unchanged.</p>
 
-      <p>The UPI integration itself is technically feasible via existing payment partners and requires no new infrastructure buildout — making the scope of change manageable against the potential upside.</p>
+      <p>Noon would integrate via a UAE acquirer that already supports UPI acceptance — such as Network International or Mashreq NeoPay — both of which connect to the NPCI International–AANI interlink. This means Noon isn't pioneering new cross-border rails; it's plugging into acquiring infrastructure that already serves the UAE market, which keeps the scope of change manageable against the potential upside.</p>
     </section>
 
     <!-- INTERFACE DESIGN -->
@@ -697,20 +782,20 @@
     <!-- IMPACT -->
     <section>
       <div class="section-label">06 — Expected Impact</div>
-      <h2>Measurable outcomes across three dimensions</h2>
+      <h2>Measurable outcomes, and the economics behind them</h2>
       <div class="impact-row">
         <div class="impact-item">
           <div class="impact-dot"></div>
           <div>
-            <h4>15–25% Conversion Uplift</h4>
-            <p>Projected increase in checkout completion rate as a familiar payment option becomes available to Indian and UAE phone-number users.</p>
+            <h4>15–25% Conversion Uplift*</h4>
+            <p>Estimated increase in checkout completion rate as a familiar payment option becomes available to Indian and UAE phone-number users.</p>
           </div>
         </div>
         <div class="impact-item">
           <div class="impact-dot"></div>
           <div>
             <h4>Lower Payment Processing Costs</h4>
-            <p>UPI's 0% MDR would reduce transaction costs on every UPI-routed purchase — improving unit economics on a growing payment volume.</p>
+            <p>UPI's near-0% MDR reduces the cost of accepting payment on every UPI-routed purchase, recovering margin Noon would otherwise pay to a card processor.</p>
           </div>
         </div>
         <div class="impact-item">
@@ -721,7 +806,64 @@
           </div>
         </div>
       </div>
+      <div class="footnote">*Uplift figure is a directional estimate for illustrative purposes, not a confirmed projection — would require validation via the A/B test outlined in Section 05.</div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin:48px 0 16px;">How Noon's payment costs compare today</h3>
+      <p>UPI's advantage isn't that it generates new revenue — it's that it costs less to accept than Noon's existing payment mix. The table below puts UPI in context against the methods Noon already supports.</p>
+      <div class="cost-table-wrap">
+        <table class="cost-table">
+          <thead>
+            <tr><th>Payment Method</th><th>Typical Merchant Cost</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="method">Cards (Visa / Mastercard)</td>
+              <td class="rate">~2–3% MDR</td>
+            </tr>
+            <tr>
+              <td class="method">Apple Pay</td>
+              <td class="rate">~2–3% (same as underlying card — no separate Apple fee)</td>
+            </tr>
+            <tr>
+              <td class="method">BNPL (Tabby / Tamara)</td>
+              <td class="rate">~5–7%+ (provider absorbs credit risk)</td>
+            </tr>
+            <tr>
+              <td class="method">Cash on Delivery</td>
+              <td class="rate">No fee, but 8–15% rejection rate drives logistics cost</td>
+            </tr>
+            <tr class="highlight">
+              <td class="method">UPI (bank transfer)</td>
+              <td class="rate">~0% MDR + flat gateway/platform fee</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footnote">Figures are industry-typical ranges, not Noon-specific or confirmed contractual rates — final terms depend on Noon's existing processor agreements.</div>
+
+      <h3 style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--navy); margin:48px 0 16px;">Where Noon's money actually comes from</h3>
+      <p>A natural question: if UPI charges close to 0% MDR, how does Noon make money on a UPI-paid order? The answer is that Noon's revenue model doesn't change — only the cost of accepting payment does.</p>
+      <div class="econ-steps">
+        <div class="econ-step">
+          <div class="econ-num">1</div>
+          <p><strong>Product margin stays the same.</strong> Noon earns money the way it always does — the markup between what it pays for inventory and what the customer pays — regardless of payment method.</p>
+        </div>
+        <div class="econ-step">
+          <div class="econ-num">2</div>
+          <p><strong>Settlement still lands in AED.</strong> The customer's UPI app debits INR from their Indian bank account, but the AANI interlink settles the transaction to Noon in AED — Noon never holds or manages INR directly.</p>
+        </div>
+        <div class="econ-step">
+          <div class="econ-num">3</div>
+          <p><strong>The FX spread belongs to the payment rail, not Noon.</strong> Whoever sits in the INR→AED conversion (NPCI International, the acquiring bank, or AANI) typically earns a small currency-conversion margin — similar to how card networks earn FX markup on cross-border transactions. Noon doesn't capture this, but doesn't lose from it either.</p>
+        </div>
+        <div class="econ-step">
+          <div class="econ-num">4</div>
+          <p><strong>The real lever is cost avoidance, not new revenue.</strong> Every UPI transaction saves Noon roughly the 2–3 percentage points it would otherwise pay in card MDR. On a high-volume, low-margin retail business, that falls straight to the bottom line as recovered margin rather than top-line growth.</p>
+        </div>
+      </div>
+      <div class="footnote">This breakdown reasons from how cross-border QR-based instant-payment rails typically structure settlement and FX, based on publicly available descriptions of the UPI–AANI interlink. Exact commercial terms for a UAE merchant would need confirmation from Noon's treasury/payments team before being used in a live business case.</div>
     </section>
+
 
     <!-- QUOTE -->
     <div class="quote-block">
